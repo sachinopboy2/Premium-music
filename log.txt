@@ -1,0 +1,48 @@
+[17-Mar-26 09:52:26 - WARNING] - anony: Deno not found in PATH. Some features may not work.
+[17-Mar-26 09:52:26 - INFO] - anony: Cache directories updated.
+[17-Mar-26 09:52:27 - INFO] - anony: Loaded languages: ja, hi, fr, pa, zh, tr, es, en, ru, my, de, ar, pt
+[17-Mar-26 09:52:35 - INFO] - anony: Database connection successful. (5.61s)
+[17-Mar-26 09:52:36 - INFO] - anony: Database cache loaded.
+[17-Mar-26 09:52:44 - INFO] - anony: Bot started as @CokeStudioProbot
+[17-Mar-26 09:52:46 - INFO] - anony: Assistant 1 started as @None
+[17-Mar-26 09:52:46 - INFO] - anony: PyTgCalls client(s) started.
+[17-Mar-26 09:52:47 - INFO] - anony: Loaded 22 modules.
+[17-Mar-26 09:52:47 - INFO] - anony: Saving cookies from urls...
+[17-Mar-26 09:52:47 - INFO] - anony: Cookies saved in anony/cookies.
+[17-Mar-26 09:52:48 - INFO] - anony: Loaded 1 sudo users.
+[17-Mar-26 09:55:59 - INFO] - anony: Stopping...
+[17-Mar-26 09:55:59 - INFO] - anony: Bot stopped.
+[17-Mar-26 09:55:59 - INFO] - anony: Assistants stopped.
+[17-Mar-26 09:55:59 - INFO] - anony: Database connection closed.
+[17-Mar-26 09:55:59 - INFO] - anony: Stopped.
+
+[17-Mar-26 10:07:31 - WARNING] - anony: Deno not found in PATH. Some features may not work.
+[17-Mar-26 10:07:31 - INFO] - anony: Cache directories updated.
+[17-Mar-26 10:07:32 - INFO] - anony: Loaded languages: ja, hi, fr, pa, zh, tr, es, en, ru, my, de, ar, pt
+[17-Mar-26 10:07:38 - INFO] - anony: Database connection successful. (2.37s)
+[17-Mar-26 10:07:39 - INFO] - anony: Database cache loaded.
+[17-Mar-26 10:07:41 - INFO] - anony: Bot started as @CokeStudioProbot
+[17-Mar-26 10:07:43 - INFO] - anony: Assistant 1 started as @None
+[17-Mar-26 10:07:43 - INFO] - anony: PyTgCalls client(s) started.
+[17-Mar-26 10:07:43 - INFO] - anony: Loaded 22 modules.
+[17-Mar-26 10:07:43 - INFO] - anony: Saving cookies from urls...
+[17-Mar-26 10:07:44 - INFO] - anony: Cookies saved in anony/cookies.
+[17-Mar-26 10:07:45 - INFO] - anony: Loaded 1 sudo users.
+[17-Mar-26 10:13:41 - INFO] - anony: Stopping...
+[17-Mar-26 10:13:41 - INFO] - anony: Bot stopped.
+[17-Mar-26 10:13:41 - INFO] - anony: Assistants stopped.
+[17-Mar-26 10:13:41 - INFO] - anony: Database connection closed.
+[17-Mar-26 10:13:41 - INFO] - anony: Stopped.
+
+[17-Mar-26 10:14:07 - WARNING] - anony: Deno not found in PATH. Some features may not work.
+[17-Mar-26 10:14:07 - INFO] - anony: Cache directories updated.
+[17-Mar-26 10:14:07 - INFO] - anony: Loaded languages: ja, hi, fr, pa, zh, tr, es, en, ru, my, de, ar, pt
+[17-Mar-26 10:14:12 - INFO] - anony: Database connection successful. (2.32s)
+[17-Mar-26 10:14:13 - INFO] - anony: Database cache loaded.
+[17-Mar-26 10:14:15 - INFO] - anony: Bot started as @CokeStudioProbot
+[17-Mar-26 10:14:17 - INFO] - anony: Assistant 1 started as @None
+[17-Mar-26 10:14:17 - INFO] - anony: PyTgCalls client(s) started.
+[17-Mar-26 10:14:17 - INFO] - anony: Loaded 22 modules.
+[17-Mar-26 10:14:17 - INFO] - anony: Saving cookies from urls...
+[17-Mar-26 10:14:18 - INFO] - anony: Cookies saved in anony/cookies.
+[17-Mar-26 10:14:19 - INFO] - anony: Loaded 1 sudo users.
