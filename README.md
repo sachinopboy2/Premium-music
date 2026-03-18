@@ -2,7 +2,7 @@
     「 𝕻𝖗𝖊𝖒𝖎𝖚𝖒 𝕸𝖚𝖘𝖎𝖈 」</h2>
 
 <p align="center">
-  <img src="banner.png" alt="Nobita Premium Music Banner" width="100%">
+  <img src="nobita.png" alt="Nobita Premium Music Banner" width="100%">
 </p>
 
 <p align="center">
@@ -23,19 +23,19 @@
 <h3 align="center">
 ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs 
 
-[˹ᴠᴏꝛᴛᴇx˼](https://t.me/your_telegram_id)
+[˹ᴠᴏꝛᴛᴇx˼](https://t.me/7081885854)
 
 <h3 align="center">
 <a href="https://github.com/sachinopboy2"><img alt="Owner" src="https://img.shields.io/badge/𝕹𝖔𝖇𝖎ᴛ𝖆-red?style=for-the-badge"></a>
 
 <p align="center">
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/your_telegram_id)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/7081885854)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sachinopboy2)
 </p>
 
 ---
 
-### 𝗗𝗘𝗣𝗟𝗢𝗬Ｍ𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦
+### 𝗗𝗘𝗣𝗟𝗢𝗬Ｍ𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗Ｓ
 
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴠᴘs 」─
