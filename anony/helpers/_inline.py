@@ -140,7 +140,7 @@ class Inline:
             ],
             [
                 self.ikb(text="📜 ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),
-                self.ikb(text="👤 ᴅᴇᴠ", url=config.OWNER_ID, style=ButtonStyle.PRIMARY),
+                self.ikb(text="👤 ᴅᴇᴠ", url=f"tg://user?id={config.OWNER_ID}", style=ButtonStyle.PRIMARY),
             ],
             [
                 self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT, style=ButtonStyle.DEFAULT),
