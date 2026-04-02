@@ -47,7 +47,6 @@ class Inline:
             )
 
         if not remove:
-            # Stylish Cropped Symbols for Music Controls
             keyboard.append(
                 [
                     self.ikb("▶️", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
@@ -94,8 +93,10 @@ class Inline:
         return self.ikm(rows)
 
     def ping_markup(self, text: str):
+        # Yahan config check karein ki wo string hai ya nahi
+        url = str(config.SUPPORT_CHAT)
         return self.ikm(
-            [[self.ikb(text=f"🌐 {text}", url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS)]]
+            [[self.ikb(text=f"🌐 {text}", url=url, style=ButtonStyle.SUCCESS)]]
         )
 
     def play_queued(self, chat_id: int, item_id: str, _text: str):
@@ -129,7 +130,11 @@ class Inline:
         )
 
     def start_key(self, lang: dict, private: bool = False):
-        # Cropped aesthetic buttons
+        # IDs ko link format mein convert karna zaroori hai crash se bachne ke liye
+        dev_link = f"tg://user?id={config.OWNER_ID}"
+        sup_chat = str(config.SUPPORT_CHAT)
+        sup_channel = str(config.SUPPORT_CHANNEL)
+
         rows = [
             [
                 self.ikb(
@@ -140,11 +145,11 @@ class Inline:
             ],
             [
                 self.ikb(text="📜 ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),
-                self.ikb(text="👤 ᴅᴇᴠ", url=f"tg://user?id={config.OWNER_ID}", style=ButtonStyle.PRIMARY),
+                self.ikb(text="👤 ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),
             ],
             [
-                self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT, style=ButtonStyle.DEFAULT),
-                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=config.SUPPORT_CHANNEL, style=ButtonStyle.DEFAULT),
+                self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.DEFAULT),
+                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.DEFAULT),
             ],
         ]
 
@@ -180,3 +185,4 @@ class Inline:
                 ]
             ]
         )
+        
