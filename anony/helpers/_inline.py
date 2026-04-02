@@ -123,7 +123,7 @@ class Inline:
             ],
             [
                 self.ikb(text="🛠️ ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),
-                self.ikb(text="⚙️ sᴇᴛᴛɪɴɢs", url=config.SUPPORT_CHAT", style=ButtonStyle.PRIMARY),
+                self.ikb(text="💘ᴅᴇᴠʟᴏᴘᴇʀ", url=config.OWNER_ID", style=ButtonStyle.PRIMARY),
             ],
             [
                 self.ikb(text="💎 sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT, style=ButtonStyle.PRIMARY),
