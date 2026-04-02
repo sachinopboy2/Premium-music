@@ -93,8 +93,8 @@ class Inline:
         return self.ikm(rows)
 
     def ping_markup(self, text: str):
-        # Yahan config check karein ki wo string hai ya nahi
-        url = str(config.SUPPORT_CHAT)
+        support = str(config.SUPPORT_CHAT)
+        url = support if "t.me" in support or "tg://" in support else f"tg://user?id={support}"
         return self.ikm(
             [[self.ikb(text=f"🌐 {text}", url=url, style=ButtonStyle.SUCCESS)]]
         )
@@ -130,17 +130,25 @@ class Inline:
         )
 
     def start_key(self, lang: dict, private: bool = False):
-        # IDs ko link format mein convert karna zaroori hai crash se bachne ke liye
-        dev_link = f"tg://user?id={config.OWNER_ID}"
+        # Developer link fix (tg:// user open logic)
+        dev_id = str(config.OWNER_ID)
+        dev_link = f"tg://openmessage?user_id={dev_id}"
+        
+        # Support and Updates links fix
         sup_chat = str(config.SUPPORT_CHAT)
+        if "t.me" not in sup_chat and "tg://" not in sup_chat:
+             sup_chat = f"tg://user?id={sup_chat}"
+             
         sup_channel = str(config.SUPPORT_CHANNEL)
+        if "t.me" not in sup_channel and "tg://" not in sup_channel:
+             sup_channel = f"tg://user?id={sup_channel}"
 
         rows = [
             [
                 self.ikb(
                     text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",
                     url=f"https://t.me/{app.username}?startgroup=true",
-                    style=ButtonStyle.SUCCESS,
+                    style=ButtonStyle.SUCCESS, # Green button
                 )
             ],
             [
@@ -148,8 +156,9 @@ class Inline:
                 self.ikb(text="👤 ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),
             ],
             [
-                self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.DEFAULT),
-                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.DEFAULT),
+                # Style changed from DEFAULT to PRIMARY to make them blue
+                self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),
+                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),
             ],
         ]
 
@@ -159,7 +168,7 @@ class Inline:
                     self.ikb(
                         text="❄️ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ❄️",
                         url="https://t.me/link_buyer",
-                        style=ButtonStyle.DANGER,
+                        style=ButtonStyle.DANGER, # Red button
                     )
                 ]
             )
@@ -169,7 +178,7 @@ class Inline:
                     self.ikb(
                         text="🌍 ʟᴀɴɢᴜᴀɢᴇ",
                         callback_data="language",
-                        style=ButtonStyle.SUCCESS,
+                        style=ButtonStyle.SUCCESS, # Green button
                     )
                 ]
             )
@@ -185,4 +194,3 @@ class Inline:
                 ]
             ]
         )
-        
