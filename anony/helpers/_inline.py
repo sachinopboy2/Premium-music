@@ -48,15 +48,23 @@ def controls(self, chat_id: int, status: str = None, timer: str = None, remove: 
         )  
 
     if not remove:  
-        keyboard.append(  
-            [  
-                self.ikb("▶️", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),  
-                self.ikb("⏸", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),  
-                self.ikb("🔄", callback_data=f"controls replay {chat_id}", style=ButtonStyle.DEFAULT),  
-                self.ikb("⏭", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),  
-                self.ikb("⏹", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),  
-            ]  
-        )  
+        # Row 1: Resume, Pause, Skip
+keyboard.append(
+    [
+        self.ikb("Resume ▷", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
+        self.ikb("Pause II", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
+        self.ikb("Skip ‣‣I", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
+    ]
+)
+
+# Row 2: Replay, Stop
+keyboard.append(
+    [
+        self.ikb("Replay ↻", callback_data=f"controls replay {chat_id}", style=ButtonStyle.DEFAULT),
+        self.ikb("Stop ▢", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
+    ]
+)
+
 
     return self.ikm(keyboard)  
 
