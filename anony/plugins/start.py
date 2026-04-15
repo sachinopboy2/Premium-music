@@ -16,6 +16,7 @@ async def _help(_, m: types.Message):
         text=m.lang["help_menu"],
         reply_markup=buttons.help_markup(m.lang),
         quote=True,
+        parse_mode="html"   # ✅ FIX
     )
 
 
@@ -23,7 +24,10 @@ async def _help(_, m: types.Message):
 @lang.language()
 async def start(_, message: types.Message):
     if message.from_user.id in app.bl_users and message.from_user.id not in db.notified:
-        return await message.reply_text(message.lang["bl_user_notify"])
+        return await message.reply_text(
+            message.lang["bl_user_notify"],
+            parse_mode="html"   # ✅ FIX
+        )
 
     if len(message.command) > 1 and message.command[1] == "help":
         return await _help(_, message)
@@ -36,11 +40,13 @@ async def start(_, message: types.Message):
     )
 
     key = buttons.start_key(message.lang, private)
+
     await message.reply_photo(
         photo=config.START_IMG,
         caption=_text,
         reply_markup=key,
         quote=not private,
+        parse_mode="html"   # ✅ MOST IMPORTANT
     )
 
     if private:
@@ -61,12 +67,14 @@ async def settings(_, message: types.Message):
     admin_only = await db.get_play_mode(message.chat.id)
     cmd_delete = await db.get_cmd_delete(message.chat.id)
     _language = await db.get_lang(message.chat.id)
+
     await message.reply_text(
         text=message.lang["start_settings"].format(message.chat.title),
         reply_markup=buttons.settings_markup(
             message.lang, admin_only, cmd_delete, _language, message.chat.id
         ),
         quote=True,
+        parse_mode="html"   # ✅ FIX
     )
 
 
