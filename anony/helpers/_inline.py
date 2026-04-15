@@ -1,9 +1,6 @@
 # Copyright (c) 2025 AnonymousX1025
-# Licensed under the MIT License.
-# This file is part of AnonXMusic
 
 from pyrogram import types
-from pyrogram.enums import ButtonStyle
 
 from anony import app, config, lang
 from anony.core.lang import lang_codes
@@ -16,7 +13,6 @@ class Inline:
         self.ikm = types.InlineKeyboardMarkup
         self.ikb = types.InlineKeyboardButton
         
-        # --- PREMIMUM START MESSAGE ---
         self.START_TEXT = (
             f"{EMOJI} <b>ɢʀᴇᴇᴛɪɴɢs {{mention}} !</b> {EMOJI}\n\n"
             f"{EMOJI} <b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {{bot_name}}</b> {EMOJI}\n\n"
@@ -31,62 +27,61 @@ class Inline:
             f"<b>ᴇɴᴊᴏʏɪɴɢ ᴛʜᴇ ᴍᴜsɪᴄ ᴡɪᴛʜ ʏᴏᴜʀ ғʀɪᴇɴᴅs!</b> {EMOJI}"
         )
 
-    def cancel_dl(self, text) -> types.InlineKeyboardMarkup:
+    def cancel_dl(self, text):
         return self.ikm(
-            [[self.ikb(text=f"{EMOJI} {text}", callback_data="cancel_dl", style=ButtonStyle.DANGER)]]
+            [[self.ikb(text=f"{EMOJI} {text}", callback_data="cancel_dl")]]
         )
 
-    def controls(self, chat_id: int, status: str = None, timer: str = None, remove: bool = False):
+    def controls(self, chat_id, status=None, timer=None, remove=False):
         keyboard = []
 
         if status:
             keyboard.append(
-                [self.ikb(text=f"{EMOJI} {status}", callback_data=f"controls status {chat_id}", style=ButtonStyle.DEFAULT)]
+                [self.ikb(text=f"{EMOJI} {status}", callback_data=f"controls status {chat_id}")]
             )
         elif timer:
             keyboard.append(
-                [self.ikb(text=f"{EMOJI} {timer}", callback_data=f"controls status {chat_id}", style=ButtonStyle.DEFAULT)]
+                [self.ikb(text=f"{EMOJI} {timer}", callback_data=f"controls status {chat_id}")]
             )
 
         if not remove:
             keyboard.append(
                 [
-                    self.ikb(f"{EMOJI}", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
-                    self.ikb(f"{EMOJI}", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
-                    self.ikb(f"{EMOJI}", callback_data=f"controls replay {chat_id}", style=ButtonStyle.DEFAULT),
-                    self.ikb(f"{EMOJI}", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
-                    self.ikb(f"{EMOJI}", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
+                    self.ikb(f"{EMOJI}", callback_data=f"controls resume {chat_id}"),
+                    self.ikb(f"{EMOJI}", callback_data=f"controls pause {chat_id}"),
+                    self.ikb(f"{EMOJI}", callback_data=f"controls replay {chat_id}"),
+                    self.ikb(f"{EMOJI}", callback_data=f"controls skip {chat_id}"),
+                    self.ikb(f"{EMOJI}", callback_data=f"controls stop {chat_id}"),
                 ]
             )
 
         return self.ikm(keyboard)
 
-    def help_markup(self, _lang: dict, back: bool = False):
+    def help_markup(self, _lang, back=False):
         if back:
             rows = [
                 [
-                    self.ikb(text=f"{EMOJI} ʙᴀᴄᴋ", callback_data="help back", style=ButtonStyle.PRIMARY),
-                    self.ikb(text=f"{EMOJI} ᴄʟᴏsᴇ", callback_data="help close", style=ButtonStyle.DANGER),
+                    self.ikb(text=f"{EMOJI} ʙᴀᴄᴋ", callback_data="help back"),
+                    self.ikb(text=f"{EMOJI} ᴄʟᴏsᴇ", callback_data="help close"),
                 ]
             ]
         else:
             cbs = ["admins", "auth", "blist", "lang", "ping", "play", "queue", "stats", "sudo"]
             buttons = [
-                self.ikb(text=f"{EMOJI} {_lang[f'help_{i}'].upper()}", callback_data=f"help {cb}", style=ButtonStyle.PRIMARY)
+                self.ikb(text=f"{EMOJI} {_lang[f'help_{i}'].upper()}", callback_data=f"help {cb}")
                 for i, cb in enumerate(cbs)
             ]
             rows = [buttons[i:i + 3] for i in range(0, len(buttons), 3)]
 
         return self.ikm(rows)
 
-    def lang_markup(self, _lang: str):
+    def lang_markup(self, _lang):
         langs = lang.get_languages()
 
         buttons = [
             self.ikb(
                 text=f"{name} {'✓' if code == _lang else ''}",
                 callback_data=f"lang_change {code}",
-                style=ButtonStyle.SUCCESS if code == _lang else ButtonStyle.PRIMARY
             )
             for code, name in langs.items()
         ]
@@ -94,101 +89,38 @@ class Inline:
         rows = [buttons[i:i + 2] for i in range(0, len(buttons), 2)]
         return self.ikm(rows)
 
-    def ping_markup(self, text: str):
+    def ping_markup(self, text):
         support = str(config.SUPPORT_CHAT)
         url = support if "t.me" in support or "tg://" in support else f"tg://user?id={support}"
         return self.ikm(
-            [[self.ikb(text=f"{EMOJI} {text}", url=url, style=ButtonStyle.SUCCESS)]]
+            [[self.ikb(text=f"{EMOJI} {text}", url=url)]]
         )
 
-    def play_queued(self, chat_id: int, item_id: str, _text: str):
+    def play_queued(self, chat_id, item_id, _text):
         return self.ikm(
-            [[self.ikb(text=f"{EMOJI} {_text}", callback_data=f"controls force {chat_id} {item_id}", style=ButtonStyle.SUCCESS)]]
+            [[self.ikb(text=f"{EMOJI} {_text}", callback_data=f"controls force {chat_id} {item_id}")]]
         )
 
-    def queue_markup(self, chat_id: int, _text: str, playing: bool):
+    def queue_markup(self, chat_id, _text, playing):
         action = "pause" if playing else "resume"
         return self.ikm(
-            [[self.ikb(text=f"{EMOJI} {_text}", callback_data=f"controls {action} {chat_id} q", style=ButtonStyle.PRIMARY)]]
+            [[self.ikb(text=f"{EMOJI} {_text}", callback_data=f"controls {action} {chat_id} q")]]
         )
 
-    def settings_markup(self, lang: dict, admin_only: bool, cmd_delete: bool, language: str, chat_id: int):
+    def settings_markup(self, lang, admin_only, cmd_delete, language, chat_id):
         return self.ikm(
             [
                 [
-                    self.ikb(f"{EMOJI} {lang['play_mode']}", callback_data="settings", style=ButtonStyle.DEFAULT),
-                    self.ikb(text=f"{'🔒' if admin_only else '🔓'}", callback_data="settings play", style=ButtonStyle.SUCCESS),
+                    self.ikb(f"{EMOJI} {lang['play_mode']}", callback_data="settings"),
+                    self.ikb(text=f"{'🔒' if admin_only else '🔓'}", callback_data="settings play"),
                 ],
                 [
-                    self.ikb(f"{EMOJI} {lang['cmd_delete']}", callback_data="settings", style=ButtonStyle.DEFAULT),
-                    self.ikb(text=f"{'✅' if cmd_delete else '❌'}", callback_data="settings delete", style=ButtonStyle.PRIMARY),
+                    self.ikb(f"{EMOJI} {lang['cmd_delete']}", callback_data="settings"),
+                    self.ikb(text=f"{'✅' if cmd_delete else '❌'}", callback_data="settings delete"),
                 ],
                 [
-                    self.ikb(f"{EMOJI} {lang['language']}", callback_data="settings", style=ButtonStyle.DEFAULT),
-                    self.ikb(text=f"🚩 {lang_codes[language]}", callback_data="language", style=ButtonStyle.SUCCESS),
+                    self.ikb(f"{EMOJI} {lang['language']}", callback_data="settings"),
+                    self.ikb(text=f"🚩 {lang_codes[language]}", callback_data="language"),
                 ],
-            ]
-        )
-
-    def start_key(self, lang: dict, private: bool = False):
-        dev_id = str(config.OWNER_ID)
-        dev_link = f"tg://openmessage?user_id={dev_id}"
-        
-        sup_chat = str(config.SUPPORT_CHAT)
-        if "t.me" not in sup_chat and "tg://" not in sup_chat:
-             sup_chat = f"tg://user?id={sup_chat}"
-             
-        sup_channel = str(config.SUPPORT_CHANNEL)
-        if "t.me" not in sup_channel and "tg://" not in sup_channel:
-             sup_channel = f"tg://user?id={sup_channel}"
-
-        rows = [
-            [
-                self.ikb(
-                    text=f"{EMOJI} ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
-                    url=f"https://t.me/{app.username}?startgroup=true",
-                    style=ButtonStyle.SUCCESS,
-                )
-            ],
-            [
-                self.ikb(text=f"{EMOJI} ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),
-                self.ikb(text=f"{EMOJI} ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),
-            ],
-            [
-                self.ikb(text=f"{EMOJI} sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),
-                self.ikb(text=f"{EMOJI} ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),
-            ],
-        ]
-
-        if private:
-            rows.append(
-                [
-                    self.ikb(
-                        text=f"{EMOJI} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ",
-                        url="https://t.me/link_buyer",
-                        style=ButtonStyle.DANGER,
-                    )
-                ]
-            )
-        else:
-            rows.append(
-                [
-                    self.ikb(
-                        text=f"{EMOJI} ʟᴀɴɢᴜᴀɢᴇ",
-                        callback_data="language",
-                        style=ButtonStyle.SUCCESS,
-                    )
-                ]
-            )
-
-        return self.ikm(rows)
-
-    def yt_key(self, link: str):
-        return self.ikm(
-            [
-                [
-                    self.ikb(text=f"{EMOJI} ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),
-                    self.ikb(text=f"{EMOJI} ᴡᴀᴛᴄʜ ᴏɴ ʏᴛ", url=link, style=ButtonStyle.DANGER),
-                ]
             ]
         )
