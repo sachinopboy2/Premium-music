@@ -22,8 +22,8 @@ class Config:
         self.SESSION2 = getenv("SESSION2", None)
         self.SESSION3 = getenv("SESSION3", None)
 
-        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/nobmz")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/nobmz")
+        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/botxup")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/botxup")
 
         self.AUTO_LEAVE: bool = getenv("AUTO_LEAVE", "False").lower() == "true"
         self.AUTO_END: bool = getenv("AUTO_END", "False").lower() == "true"
@@ -37,9 +37,9 @@ class Config:
             url for url in getenv("COOKIES_URL", "").split(" ")
             if url and "batbin.me" in url
         ]
-        self.DEFAULT_THUMB = getenv("DEFAULT_THUMB", "https://files.catbox.moe/4inxqg.jpg")
-        self.PING_IMG = getenv("PING_IMG", "https://files.catbox.moe/4inxqg.jpg")
-        self.START_IMG = getenv("START_IMG", "https://files.catbox.moe/4inxqg.jpg")
+        self.DEFAULT_THUMB = getenv("DEFAULT_THUMB", "https://i.ibb.co/VWTLm3g4/x.jpg")
+        self.PING_IMG = getenv("PING_IMG", "https://i.ibb.co/VWTLm3g4/x.jpg")
+        self.START_IMG = getenv("START_IMG", "https://i.ibb.co/VWTLm3g4/x.jpg")
 
     def check(self):
         missing = [
