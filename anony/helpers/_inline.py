@@ -58,7 +58,7 @@ class Inline:
             # Row 2: Replay, Stop
             keyboard.append(
                 [
-                    self.ikb("Replay ↻", callback_data=f"controls replay {chat_id}", style=ButtonStyle.DEFAULT),
+                    self.ikb("Replay ↻", callback_data=f"controls replay {chat_id}", style=ButtonStyle.SUCCESS),
                     self.ikb("Stop ▢", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
                 ]
             )
