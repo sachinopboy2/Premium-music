@@ -49,17 +49,17 @@ class Inline:
             # Row 1: Resume, Pause, Skip
             keyboard.append(
                 [
-                    self.ikb("Resume ▷", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
-                    self.ikb("Pause II", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
-                    self.ikb("Skip ‣‣I", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb("<emoji id='5246772116543512028'>⛔️</emoji>Resume", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb("<emoji id='6289318205798223581'>⚠️</emoji>Pause", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb("<emoji id='5447183459602669338'>🔽</emoji>Skip", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
                 ]
             )
 
             # Row 2: Replay, Stop
             keyboard.append(
                 [
-                    self.ikb("Replay ↻", callback_data=f"controls replay {chat_id}", style=ButtonStyle.SUCCESS),
-                    self.ikb("Stop ▢", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
+                    self.ikb("<emoji id='6170200753882271374'>🏪</emoji>Replay", callback_data=f"controls replay {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb("<emoji id='6267262260243076354'>🛑</emoji>Stop ▢", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
                 ]
             )
 
@@ -69,8 +69,8 @@ class Inline:
         if back:  
             rows = [  
                 [  
-                    self.ikb(text="🔙 ʙᴀᴄᴋ", callback_data="help back", style=ButtonStyle.PRIMARY),  
-                    self.ikb(text="🗑️ ᴄʟᴏsᴇ", callback_data="help close", style=ButtonStyle.DANGER),  
+                    self.ikb(text="<emoji id='5406745015365943482'>⬇️</emoji>ʙᴀᴄᴋ", callback_data="help back", style=ButtonStyle.PRIMARY),  
+                    self.ikb(text="<emoji id='5445267414562389170'>🗑</emoji>ᴄʟᴏsᴇ", callback_data="help close", style=ButtonStyle.DANGER),  
                 ]  
             ]  
         else:  
@@ -150,18 +150,18 @@ class Inline:
         rows = [  
             [  
                 self.ikb(  
-                    text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",  
+                    text="<emoji id='5397916757333654639'>➕</emoji> ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ <emoji id='5397916757333654639'>➕</emoji>",  
                     url=f"https://t.me/{app.username}?startgroup=true",  
                     style=ButtonStyle.SUCCESS,  
                 )  
             ],  
             [  
-                self.ikb(text="📜 ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),  
-                self.ikb(text="👤 ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="<emoji id='6170002064400190755'>✉</emoji> ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),  
+                self.ikb(text="<emoji id='4904848288345228262'>👤</emoji> ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),  
             ],  
             [  
-                self.ikb(text="✨ sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),  
-                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="<emoji id='5224607267797606837'>☄️</emoji> sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="<emoji id='6172319401119845499'>🌟</emoji> ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),  
             ],  
         ]  
 
@@ -169,7 +169,7 @@ class Inline:
             rows.append(  
                 [  
                     self.ikb(  
-                        text="❄️ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ❄️",  
+                        text="<emoji id='5301219129192115723'>❤️</emoji> sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ <emoji id='5301219129192115723'>❤️</emoji>",  
                         url="https://t.me/room_cut",  
                         style=ButtonStyle.DANGER,  
                     )  
@@ -179,7 +179,7 @@ class Inline:
             rows.append(  
                 [  
                     self.ikb(  
-                        text="🌍 ʟᴀɴɢᴜᴀɢᴇ",  
+                        text="<emoji id='6291653212013337151'>👻</emoji> ʟᴀɴɢᴜᴀɢᴇ",  
                         callback_data="language",  
                         style=ButtonStyle.SUCCESS,  
                     )  
@@ -192,8 +192,8 @@ class Inline:
         return self.ikm(  
             [  
                 [  
-                    self.ikb(text="✂️ ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),  
-                    self.ikb(text="📺 ᴡᴀᴛᴄʜ ᴏɴ ʏᴛ", url=link, style=ButtonStyle.DANGER),  
+                    self.ikb(text="<emoji id='5301219129192115723'>❤️</emoji> ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),  
+                    self.ikb(text="<emoji id='6289318205798223581'>⚠️</emoji> ᴡᴀᴛᴄʜ ᴏɴ ʏᴛ", url=link, style=ButtonStyle.DANGER),  
                 ]  
             ]  
         )
