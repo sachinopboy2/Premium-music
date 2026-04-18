@@ -13,7 +13,7 @@ class Inline:
         self.ikm = types.InlineKeyboardMarkup
         self.ikb = types.InlineKeyboardButton
 
-        # --- PREMIMUM START MESSAGE ---  
+        # --- PREMIUM START MESSAGE ---  
         self.START_TEXT = (  
             "✨ **ɢʀᴇᴇᴛɪɴɢs {mention} !** ✨\n\n"  
             "🎵 **ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {bot_name}** 🚀\n\n"  
@@ -49,17 +49,17 @@ class Inline:
             # Row 1: Resume, Pause, Skip
             keyboard.append(
                 [
-                    self.ikb("⛔️Resume", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
-                    self.ikb("⚠️Pause", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
-                    self.ikb("🔽 Skip", keyboard.append(callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb("⛔️ Resume", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb("⚠️ Pause", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb("🔽 Skip", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
                 ]
             )
 
             # Row 2: Replay, Stop
             keyboard.append(
                 [
-                    self.ikb("Replay", callback_data=f"controls replay {chat_id}", style=ButtonStyle.SUCCESS),
-                    self.ikb("Stop ▢", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
+                    self.ikb("🔄 Replay", callback_data=f"controls replay {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb("⏹ Stop", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
                 ]
             )
 
@@ -150,18 +150,18 @@ class Inline:
         rows = [  
             [  
                 self.ikb(  
-                    text="<emoji id='➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",  
+                    text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",  
                     url=f"https://t.me/{app.username}?startgroup=true",  
                     style=ButtonStyle.SUCCESS,  
                 )  
             ],  
             [  
-                self.ikb(text="ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),  
-                self.ikb(text="<emoji id='4904848288345228262'>👤</emoji> ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="📜 ʜᴇʟᴘ", callback_data="help", style=ButtonStyle.PRIMARY),  
+                self.ikb(text="👤 ᴅᴇᴠ", url=dev_link, style=ButtonStyle.PRIMARY),  
             ],  
             [  
-                self.ikb(text=" sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),  
-                self.ikb(text=" ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="💬 sᴜᴘᴘᴏʀᴛ", url=sup_chat, style=ButtonStyle.PRIMARY),  
+                self.ikb(text="📢 ᴜᴘᴅᴀᴛᴇs", url=sup_channel, style=ButtonStyle.PRIMARY),  
             ],  
         ]  
 
@@ -169,7 +169,7 @@ class Inline:
             rows.append(  
                 [  
                     self.ikb(  
-                        text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ",  
+                        text="📁 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ",  
                         url="https://t.me/room_cut",  
                         style=ButtonStyle.DANGER,  
                     )  
@@ -179,7 +179,7 @@ class Inline:
             rows.append(  
                 [  
                     self.ikb(  
-                        text=" ʟᴀɴɢᴜᴀɢᴇ",  
+                        text="🚩 ʟᴀɴɢᴜᴀɢᴇ",  
                         callback_data="language",  
                         style=ButtonStyle.SUCCESS,  
                     )  
@@ -192,8 +192,8 @@ class Inline:
         return self.ikm(  
             [  
                 [  
-                    self.ikb(text=" ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),  
-                    self.ikb(text=" ᴡᴀᴛᴄʜ ᴏɴ ʏᴛ", url=link, style=ButtonStyle.DANGER),  
-                ]  self.ikb(f\"🌐 {lang['language']}\", callback_data=\"settings\", style=ButtonStyle.DEFAULT),
+                    self.ikb(text="🔗 ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),  
+                    self.ikb(text="🎬 ᴡᴀᴛᴄʜ ᴏɴ ʏᴛ", url=link, style=ButtonStyle.DANGER),  
+                ]  
             ]  
         )
